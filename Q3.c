@@ -1,17 +1,26 @@
-#include <stdio.h> 
-int main() {
-    int marks[5],i;
-    
-    for(i=0;i<=4;i=i+1) {
-        printf("Enter marks of student-%d :",i+1);
-        scanf("%d",&marks[i]);
-    }
+#include <stdio.h>
 
-    for(i=0;i<=4;i=i+1) {
-        if (marks[i]==99){
-            printf("Student-%d has scored first 99 marks",i+1);
-            break;
-        }
+int subtract(int a, int b) {
+    while (b != 0) {
+        // Find the carry and shift it left
+        int carry = (~a) & b;
+        // Perform subtraction using XOR
+        a = a ^ b;
+        // Update b to the carry
+        b = carry << 1;
     }
+    return a;
+}
+
+int main() {
+    int num1, num2, result;
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    result = subtract(num1, num2);
+    printf("Subtraction of %d and %d is %d\n", num1, num2, result);
+
     return 0;
 }

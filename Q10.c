@@ -1,33 +1,28 @@
 #include <stdio.h>
 
-int isPrime(int num) {
-    if (num <= 1) return 0;
-    for (int i = 2; i <= num / 2; i++) {
-        if (num % i == 0) return 0;
+long factorial(int n) {
+    long result = 1;
+    for (int i = 1; i <= n; i++) {
+        result *= i;
     }
-    return 1;
+    return result;
 }
 
 int main() {
-    int n, count = 0;
+    int rows;
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
 
-    printf("Enter the size of the array: ");
-    scanf("%d", &n);
-
-    int arr[n];
-
-    printf("Enter the elements of the array:\n");
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
-
-    for (int i = 0; i < n; i++) {
-        if (isPrime(arr[i])) {
-            count++;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < rows - i - 1; j++) {
+            printf(" ");
         }
+        
+        for (int j = 0; j <= i; j++) {
+            printf("%ld ", factorial(i) / (factorial(j) * factorial(i - j)));
+        }
+        printf("\n");
     }
-
-    printf("The number of prime numbers in the array is: %d\n", count);
 
     return 0;
 }

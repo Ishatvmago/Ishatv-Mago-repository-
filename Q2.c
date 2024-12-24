@@ -1,25 +1,20 @@
 #include <stdio.h>
+
+//Programme to print HCF of two integers
+
 int main() {
-    int marks[5],i;
+    int num1,num2,i,HCF;
+    printf("Enter first number :");
+    scanf("%d",&num1);
+    printf("Enter second number :");
+    scanf("%d",&num2);
 
-    for(i=0;i<=4;i=i+1) {
-        printf("Enter marks of student-%d :",i+1);
-        scanf("%d",&marks[i]);
+    for (i=1;i<=num1 && i<=num2;i=i+1) {
+        if (num1%i==0 && num2%i==0)
+        HCF=i;
+        
     }
-
-    printf("\n# Grade list of student's as per marks\n");
-
-    for(i=0;i<=4;i=i+1) {
-        if (marks[i]>=75)
-        printf("Student-%d has achieved Grade-A\n",i+1);
-        else if (marks[i]>=60 && marks[i]<75)
-        printf("Student-%d has achieved Grade-B\n",i+1);
-        else if (marks[i]>=40 && marks[i]<60)
-        printf("Student-%d has achieved Grade-C\n",i+1);
-        else if (marks[i]>=0 && marks[i]<40)
-        printf("Student-%d has achieved Grade-D\n",i+1);
-        else
-        printf("NOTE--Enter marks on scale of 0-100.\n");
-    }
+    printf("HCF of %d , %d is %d",num1,num2,HCF);
     return 0;
+
 }

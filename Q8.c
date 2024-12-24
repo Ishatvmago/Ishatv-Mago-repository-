@@ -1,30 +1,24 @@
 #include <stdio.h>
-
 int main() {
-    int n, i;
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
-    
-    int marks[n];
-    for(i = 0; i < n; i++) {
-        printf("Enter marks-%d :",i+1);
-        scanf("%d", &marks[i]);
-    }
-
-    int max = marks[0];
-    int min = marks[0];
-
-    for(i = 1; i < n; i++) {
-        if(marks[i] > max) {
-            max = marks[i];
+    int i;
+    for (i=1;i<=5;i=i+1) {
+        switch (i) {
+            case 1:
+            printf("1\n");
+            break;
+            case 2:
+            printf("0 1\n");
+            break;
+            case 3:
+            printf("1 0 1\n");
+            break;
+            case 4:
+            printf("0 1 0 1\n");
+            break;
+            case 5:
+            printf("1 0 1 0 1");
+            break;
         }
-        if(marks[i] < min) {
-            min = marks[i];
-        }
     }
-
-    printf("Maximum score: %d\n", max);
-    printf("Minimum score: %d\n", min);
-
     return 0;
 }
