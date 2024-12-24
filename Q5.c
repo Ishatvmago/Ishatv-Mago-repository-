@@ -1,28 +1,14 @@
-#include <stdio.h>
-
-//Programme to check whether number is perfect or not.
-
+#include <stdio.h> 
 int main() {
-    int num,i,sum=0,sum1;
-    printf("Enter a number :");
-    scanf("%d",&num);
-
-    for (i=1;i<=num;i=i+1) {
-        while(num%i==0) {
-        printf("%d, ",i);
-        sum=sum+i;
-        i=i+1;
-    }
-    }
-    sum1=sum-num;
+    int marks[5],i,sum=0;
     
+    for(i=0;i<=4;i=i+1) {
+        printf("Enter marks of student-%d :",i+1);
+        scanf("%d",&marks[i]);
+    }
 
-    if (sum1==num)
-    printf("\n%d is a perfect number",num);
-    else 
-    printf("\n%d is not a perfect number",num);
-
-    return 0;
-
-
+    for(i=0,sum;i<=4;i=i+1) {
+        sum=sum+marks[i];
+    }
+    printf("\nSum of mark's of all student's is %d",sum);
 }

@@ -1,26 +1,22 @@
 #include <stdio.h>
-
-//Programme to find quadrant's
-
+int average (int sum) {
+    int a;
+    a=sum/5;
+    return a;
+};
 int main() {
-    int x,y;
-    printf("Enter X-cordinate :");
-    scanf("%d",&x);
-    printf("Enter Y-cordinate :");
-    scanf("%d",&y);
-
-    if (x>0 && y>0)
-    printf("The cordinate point (%d,%d) lies in First-quadrant",x,y);
-    else if (x<0 && y>0)
-    printf("The cordinate point (%d,%d) lies in Second-quadrant",x,y);
-    else if (x<0 && y<0)
-    printf("The cordinate point (%d,%d) lies in Third-quadrant",x,y);
-    else if (x>0 && y<0)
-    printf("The cordinate point (%d,%d) lies in Fourth-quadrant",x,y);
-    else 
-    printf("The cordinate point (%d,%d) is at origin",x,y);
-    return 0;
-
-   
+    int marks[5],i,sum=0;
     
+    for(i=0;i<=4;i=i+1) {
+        printf("Enter marks of student-%d :",i+1);
+        scanf("%d",&marks[i]);
+    }
+
+    for(i=0,sum;i<=4;i=i+1) {
+        sum=sum+marks[i];
+    }
+    printf("\nSum of mark's of all student's is %d\n",sum);
+
+    printf("Average of total marks is %d",average(sum));
+    return 0;
 }
